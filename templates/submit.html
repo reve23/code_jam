@@ -1,0 +1,136 @@
+{% extends "base.html" %}
+
+{% block style %}
+
+ .container{
+    position: absolute;
+    max-width: 800px;
+    height: 500px;
+    margin: auto;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+  }
+   .myRightCtn{
+    position: relative;
+    background-image: linear-gradient(45deg,#f046ff,#9600e8);
+    border-radius:25px;
+    height: 100%;
+    padding:25px;
+    color: rgb(192,192,192);
+    font-size: 12px;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+  }
+  .myLeftCtn{
+    position: relative;
+    background: #fff;
+    border-radius: 25px;
+    height: 100%;
+    padding:25px;
+    padding-left:50px;
+  }
+  .myLeftCtn header{
+    color: blueviolet;
+    font-size:24px;
+    font-weight:700;
+    margin-bottom:20px;
+  }
+  .row{
+    height: 100%;
+  }
+  .mycard{
+    position: relative;
+    background:#fff;
+    height: 100%;
+    border-radius:25px;
+    -webkit-box-shadow: 0px 10px 40px -10px rgba(0,0,0,0.7);
+    -moz-box-shadow: 0px 10px 40px -10px rgba(0,0,0,0.7);
+    box-shadow: 0px 10px 40px -10px rgba(0,0,0,0.7);
+  }
+  .myRightCtn header {
+    color: #fff;
+    font-size: 30px;
+  }
+  .box{
+    position: relative;
+    margin: 20px;
+    margin-bottom: 100px;
+  }
+  .myLeftCtn .myInput {
+    width: 230px;
+    border-radius: 25px;
+    padding: 10px;
+    padding-left: 50px;
+    border: none;
+    -webkit-box-shadow: 0px 10px 49px -14px rgba(0, 0, 0, 0.7);
+    -moz-box-shadow: 0px 10px 49px -14px rgba(0, 0, 0, 0.7);
+    box-shadow: 0px 10px 49px -14px rgba(0,0,0,0.7);
+  }
+  .myleftCtn .myInput:focus{
+    outline: none;
+  }
+  .myForm {
+    position: relative;
+    margin-top:50px;
+  }
+  .myLeftCtn .butt{
+    background: linear-gradient(45deg,#bb36fd,#9b00e8);
+    color: #fff;
+    width: 230px;
+    border: none;
+    border-radius: 25px;
+    padding: 10px;
+    -webkit-box-shadow: 0px 10px 41px -11px rgba(0,0,0,0.7);
+    -moz-box-shadow: 0px 10px 41px -11px rgba(0, 0, 0, 0.7);
+    box-shadow: 0px 10px 41px -11px rgba(0, 0, 0, 0.7);
+  }
+  .myLeftCtn .butt:hover{
+    background: linear-gradient(45deg,#c85bff,#b726ff);
+  }
+{% endblock  %}
+{% block content %}
+
+  <div class="container my-5">
+    <div class="mycard">
+      <div class="row">
+        <div class="col-md-6">
+          <div class="myLeftCtn">
+            <form action="/" method="post" class="myForm text-center">
+              <header>Submit your project here</header>
+
+                <div class="form-group mb-3">
+                  <i class="fas fa-user"></i>
+                  <input type="text" placeholder="Team Name" id="teamName" name="teamName" class="myInput">
+                </div>
+                <div class="form-group mb-3">
+                  <i class="fas fa-envelope"></i>
+                  <input class="myInput" placeholder="Team Logo Link" type="text" name="teamlogo">
+                </div>
+                <div class="form-group mb-3">
+                  <i class="fas fa-envelope"></i>
+                  <input class="myInput" placeholder="Github Repo" type="text" name="github">
+                </div>
+              <div class="form-group">
+                <label>
+                  <input type="checkbox" required name="check_1" id="check_1"><small>Submit The Project?</small>
+                </label>
+              </div>
+              <input type="submit" value="Submit" class="butt">
+            </form>
+          </div>
+        </div>
+        <div class="col-md-6">
+          <div class="myRightCtn">
+            <div class="box">
+              <header>How to Submit.</header>
+              <p>Sign Up or log in to your <a href="https://www.github.com/">github</a> account. Create a new repository for your project and work with your team or solo. After completing your project make a commit and submit your github repository. Your project will be shown in <a href="/team">Teams</a> page.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+{% endblock  %}
